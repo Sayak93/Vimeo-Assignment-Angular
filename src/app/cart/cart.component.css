@@ -1,0 +1,15 @@
+.searchBox {
+    height: 50px;
+    border-bottom: 1px solid black;
+}
+
+.productList {
+    height: auto;
+    min-height: 450px;
+    border-bottom: 1px solid black;
+}
+
+.footer{
+    height: fit-content;
+    min-height: 48px;
+}

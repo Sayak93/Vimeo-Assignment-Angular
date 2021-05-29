@@ -1,0 +1,33 @@
+.container{
+ min-width: 494px;
+ min-height: 600px;
+ width: 50%;
+ height: 70%;
+ margin: auto;
+ border: 1px solid;
+}
+
+.header{
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.product{
+    border-right: 1px solid;
+    width: 50%;
+    float: left;
+}
+
+.cart{
+    width: 49.8%;
+    float: right;
+}
+
+.custom-radio{
+    float: right;
+    padding-right: 10px;
+}

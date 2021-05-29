@@ -1,16 +1,30 @@
-			<!-- Form starts -->
-			<form [formGroup]="colorChangerForm">
-						<div class="custom-control custom-radio">
-							<input id="blue" type="radio" class="custom-control-input" value="blue" name="color" formControlName="color" (change)="changeColor()">
-              <label class="custom-control-label" for="blue">Blue</label>
-            </div>
+<div class="container">
+  <div class="header">
+<!-- Form starts -->
+<form [formGroup]="colorChangerForm">
+  <div class="custom-control custom-radio">
+    <input id="red" type="radio" class="custom-control-input" value="red" name="color" formControlName="color" (change)="changeColor()">
+    <label class="custom-control-label" for="red">Red</label>
+  </div>
+  
+  <div class="custom-control custom-radio">
+    <input id="blue" type="radio" class="custom-control-input" value="blue" name="color" formControlName="color" (change)="changeColor()">
+    <label class="custom-control-label" for="blue">Blue</label>
+  </div>
+</form><!-- Form ends -->
+  </div>
+  <div class="body">
+    <div class="product">
+      <app-products [products]="mappedProducts">    
+      </app-products>
+    </div>
+    <div class="cart">
+      <app-cart></app-cart>
+    </div>
+  </div>
+</div>
 
-            <div class="custom-control custom-radio">
-              <input id="red" type="radio" class="custom-control-input" value="red" name="color" formControlName="color" (change)="changeColor()">
-              <label class="custom-control-label" for="red">Red</label>
-            </div>
-      </form><!-- Form ends -->
-<app-products></app-products>
-<app-cart></app-cart>
+
+
 
 <router-outlet></router-outlet>

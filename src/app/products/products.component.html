@@ -1,1 +1,14 @@
-<p>products works!</p>
+<div class="container">
+    <div class="searchBox">
+        <input type="text" placeholder="Enter product name here">
+        <button>Search</button>
+    </div>
+    <div class="productList">
+        <div *ngFor="let product of products" class="productWrapper">
+            <input class="checkbox" type="checkbox" [(ngModel)]="product.isChecked" (change)="changeSelection()">{{product.name}}
+        </div>
+    </div>
+    <div class="footer">
+        <button>Add to cart &#8594;</button>
+    </div>
+</div>
