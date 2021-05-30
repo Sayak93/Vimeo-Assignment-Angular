@@ -4,22 +4,28 @@
 <form [formGroup]="colorChangerForm">
   <div class="custom-control custom-radio">
     <input id="red" type="radio" class="custom-control-input" value="red" name="color" formControlName="color" (change)="changeColor()">
-    <label class="custom-control-label" for="red">Red</label>
+    <label class="custom-control-label textRed" for="red">Red</label>
   </div>
   
   <div class="custom-control custom-radio">
     <input id="blue" type="radio" class="custom-control-input" value="blue" name="color" formControlName="color" (change)="changeColor()">
-    <label class="custom-control-label" for="blue">Blue</label>
+    <label class="custom-control-label textBlue" for="blue">Blue</label>
   </div>
 </form><!-- Form ends -->
   </div>
   <div class="body">
     <div class="product">
-      <app-products [products]="mappedProducts">    
+      <app-products 
+        [products]="mappedProducts" 
+        [buttonColor]="buttonColor"
+        (pushToCart)="onPushToCart($event)">    
       </app-products>
     </div>
     <div class="cart">
-      <app-cart></app-cart>
+      <app-cart 
+        [buttonColor]="buttonColor"
+        [addedProducts]="addedProducts">        
+      </app-cart>
     </div>
   </div>
 </div>

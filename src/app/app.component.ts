@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
   public buttonColor: string;
   public colorChangerForm: FormGroup;
   public mappedProducts: Array<mappedProductModel>;
+  public addedProducts: Array<mappedProductModel>;
   public createServer = createServer;
 
   constructor(public fb: FormBuilder, public productService: ProductService) { }
@@ -28,7 +29,8 @@ export class AppComponent implements OnInit {
     this.title = 'sayak-chatterjee-may292021';
     this.buttonColor = 'blue';
     this.mappedProducts = [];
-
+    this.addedProducts = [];
+    
     // initialize mock server
     this.createServer({
       routes() {
@@ -70,7 +72,8 @@ export class AppComponent implements OnInit {
         })
       }
     });
-
+    
+    // get products on bootstrap
     this.getProducts();
   }
 
@@ -101,6 +104,10 @@ export class AppComponent implements OnInit {
         isChecked: false
       };
     });
-    
+  }
+
+  // on getting products to add to cart
+  onPushToCart(addedProducts){
+    this.addedProducts = JSON.parse(addedProducts);
   }
 }

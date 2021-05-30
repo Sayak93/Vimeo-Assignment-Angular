@@ -1,1 +1,64 @@
-/* You can add global styles to this file, and also import other style files */
+.productList {
+    height: auto;
+    min-height: 450px;
+    max-height: 450px;
+    overflow-y: scroll;
+    border-bottom: 1px solid black;
+}
+
+.footer{
+    height: fit-content;
+    min-height: 48px;
+    display: flex;
+}
+
+.footer > button {
+    width: 100%;
+}
+
+.checkbox {
+    height: 20px;
+    width: 20px;
+}
+
+.productWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 50px;
+    font-size: 25px;
+    padding-left: 20px;
+    border: 1px solid black;
+}
+
+.noProduct{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnBlue{
+    background-color: rgb(36, 119, 175);
+    color: white;
+}
+
+.textBlue{
+    color: rgb(36, 119, 175);
+}
+
+.textRed{
+    color: rgb(209, 34, 63);
+}
+
+.btnRed{
+    background-color: rgb(209, 34, 63);
+    color: white;
+}
+
+.custom-control-input{
+    cursor: pointer;
+}
+
+button{
+    cursor: pointer;
+}

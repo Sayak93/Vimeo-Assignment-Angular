@@ -1,14 +1,20 @@
 <div class="container">
     <div class="searchBox">
-        <input type="text" placeholder="Enter product name here">
-        <button>Search</button>
+        <input type="text" placeholder="Enter product name here" [(ngModel)]="searchedProduct" (keydown.enter)="productSearch()">
+        <button (click)="productSearch()">Search</button>
     </div>
-    <div class="productList">
+    <div class="productList" [ngClass]="{'noProduct': showNoMatchMessage}">
         <div *ngFor="let product of products" class="productWrapper">
             <input class="checkbox" type="checkbox" [(ngModel)]="product.isChecked" (change)="changeSelection()">{{product.name}}
         </div>
+        <span class="noMatch" *ngIf="showNoMatchMessage">
+            No products found
+        </span>
     </div>
     <div class="footer">
-        <button>Add to cart &#8594;</button>
+        <button 
+            (click)="addToCart()"
+            [ngClass]="{'btnBlue': buttonColor === 'blue', 'btnRed' : buttonColor === 'red' }"
+        >Add to cart &#8594;</button>
     </div>
 </div>
